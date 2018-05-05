@@ -2,8 +2,8 @@
 MaplinFan
 =========
 
-[![Build Status](https://travis-ci.org/jay-to-the-dee/pearlfan.svg?branch=master)](https://travis-ci.org/jay-to-the-dee/pearlfan)
-[![License](https://img.shields.io/badge/license-GPLv3-blue.svg?style=flat)](https://github.com/jay-to-the-dee/pearlfan/blob/master/LICENSE)
+[![Build Status](https://travis-ci.org/jay-to-the-dee/pearlfan.svg?branch=pid7160)](https://travis-ci.org/jay-to-the-dee/pearlfan)
+[![License](https://img.shields.io/badge/license-GPLv3-blue.svg?style=flat)](https://github.com/jay-to-the-dee/pearlfan/blob/pid7160/LICENSE)
 
 This is a fork of PearlFan
 
