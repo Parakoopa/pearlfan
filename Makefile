@@ -11,7 +11,7 @@ OBJS   = $(SRCS:.c=.o)
 CC     = gcc
 INCS   = -Isrc/config -Isrc/draw -Isrc/utils -Isrc \
 		 -I/usr/include/netpbm
-CFLAGS = -Wall -Werror -std=c99 $(INCS)
+CFLAGS = -Wall -Werror -Wno-error=stringop-overflow= -std=c99 $(INCS)
 LIBS   += $(shell pkg-config --libs --cflags libusb-1.0)
 LIBS   +=  -lnetpbm
 
