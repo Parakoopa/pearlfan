@@ -1,33 +1,32 @@
 
-PearlFan
+MaplinFan
 =========
 
-[![Build Status](https://travis-ci.org/Ventto/pearlfan.svg?branch=master)](https://travis-ci.org/Ventto/pearlfan)
-[![License](https://img.shields.io/badge/license-GPLv3-blue.svg?style=flat)](https://github.com/Ventto/pearlfan/blob/master/LICENSE)
+[![Build Status](https://travis-ci.org/jay-to-the-dee/pearlfan.svg?branch=pid7160)](https://travis-ci.org/jay-to-the-dee/pearlfan)
+[![License](https://img.shields.io/badge/license-GPLv3-blue.svg?style=flat)](https://github.com/jay-to-the-dee/pearlfan/blob/pid7160/LICENSE)
 
-*PearlFan is a tool to draw on an "[PEARL.fr](https://www.pearl.fr/article/PX5939/ventilateur-usb-programmable-avec-message-defilant
-)" USB LED fan.*
+This is a fork of PearlFan
+
+*7160 PearlFan fork provides a GNU/Linux Kernel driver and a libusb application for the Maplin USB Programmable LED fan.*
 
 [![](doc/pearlfan.gif)](https://www.pearl.fr/article/PX5939/ventilateur-usb-programmable-avec-message-defilant)
 
 # Installation
 
-## Package
+### Dependencies
 
-```bash
-$ pacaur -S pearlfan
-```
+Archlinux:
 
-## Manually
+* *libusb-1.0* - Library that provides generic access to USB devices
+* *netpbm* - Toolkit for manipulation of graphic images (with libraries and header files)
 
-* Dependencies:
+Ubuntu:
 
-```bash
-$ pacman -S libusb-1.0 netpbm                         (archlinux)
-$ apt-get install libusb-1.0-0-dev libnetpbm10-dev    (ubuntu)
-```
+* *libnetpbm10-dev* - Netpbm libraries and header files
+* *libusb-1.0-0-dev* - Library that provides generic access to USB devices
 
-* Build:
+
+### Build
 
 ```
 $ make
@@ -56,7 +55,7 @@ Miscellaneous:
 
 # Examples
 
-```bash
+```
 $ ls images/
 pacman.pbm
 mario.pbm
@@ -67,7 +66,7 @@ pacman.pbm  +2-2-0
 mario.pbm   +1-1-6
 
 $ pearlfan -c images/file.config    (or)
-$ pearlfan -d images/             (without config file)
+$ pearlfan -d images/               (without config file)
 ```
 
 # Configuration File
@@ -102,15 +101,11 @@ Each configuration file consists of the following:
 
 | Effects/Value | 0 | 1 | 2 | 3 | 4 | 5 | 6 |
 |---|---|---|---|---|---|---|---|
-| **opening** | right-left | left-right | 2-side | red-carpet | top-bottom | bottom-top | fast-mode |
-| **closing** | left-right | right-left | 2-side | red-carpet | top-bottom | bottom-top | n/a |
-| **before-closing** | do nothing | n/a | turn left-right | n/a | n/a | n/a | turn right-left |
+| **open** | right-left | left-right | 2-side | red-carpet | top-bottom | bottom-top | fast-mode |
+| **close** | left-right | right-left | 2-side | red-carpet | top-bottom | bottom-top | x |
+| **before-close** | none | x | turn left-right | x | x | x | turn right-left |
 
-* *opening/right-left*: means appearing from right to left
-* *closing/right-left*: means disappearing from right to left
-* *fast-mode*: skip the 'open' and 'before-closing' transition effects
+* x: unused and considered as invalid value
+* none: disable
+* fast-mode: skip the 'open' and 'before-close' transition effects
 
-# TODO
-
-- [ ] Turn the project into a cross-platform lib to draw on USB LED fans
-- [ ] Rename the project
